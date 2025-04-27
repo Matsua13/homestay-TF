@@ -1,0 +1,81 @@
+/*
+    File: css/style.css
+    Description: Main CSS file for Ubud Serenity Bungalows, providing basic resets and general styles.
+*/
+
+/* Basic Reset */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+body {
+    font-family: sans-serif; /* You can replace with your chosen font */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button--primary {
+    background-color: #5cb85c; /* Example primary color */
+    color: white;
+}
+
+.button--primary:hover {
+    background-color: #4cae4c;
+}
+
+.button--secondary {
+    background-color: #f0ad4e; /* Example secondary color */
+    color: white;
+}
+
+.button--secondary:hover {
+    background-color: #eea236;
+}
+
+.button--whatsapp {
+    background-color: #25d366; /* WhatsApp green */
+    color: white;
+}
+
+.button--whatsapp:hover {
+    background-color: #128c7e;
+}
+
+.button--large {
+    font-size: 1.2em;
+    padding: 15px 30px;
+}
+
+/* You will add more general styles here as needed */

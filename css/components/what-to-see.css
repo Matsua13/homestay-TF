@@ -1,0 +1,70 @@
+/*
+    File: css/components/what-to-see.css
+    Description: Styles for the "what to see around" section.
+*/
+
+.what-to-see {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.what-to-see__intro {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #777;
+}
+
+.what-to-see__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.what-to-see__item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.what-to-see__item img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.what-to-see__item:hover img {
+    transform: scale(1.05);
+}
+
+.what-to-see__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 0.9em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.what-to-see__item:hover .what-to-see__caption {
+    opacity: 1;
+}
+
+.what-to-see__cta {
+    margin-top: 30px;
+}
+
+.what-to-see__cta p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}

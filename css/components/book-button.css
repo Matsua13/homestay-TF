@@ -1,0 +1,19 @@
+/*
+    File: css/components/book-button.css
+    Description: Styles for the reusable "Book Your Stay" button section.
+*/
+
+.book-button-section {
+    padding: 60px 20px;
+    background-color: #f0f8ff; /* A light background to make it stand out */
+    text-align: center;
+}
+
+.book-button-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.book-button-container a.button--large {
+    display: inline-block;
+}
