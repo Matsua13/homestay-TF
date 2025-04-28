@@ -33,7 +33,7 @@
 
 .accommodation-options__title {
     font-size: 1.8em;
-    color: #333;
+    color: #000;
     margin-bottom: 15px;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .accommodation-options__description {
-    color: #777;
+    color: #333;
     line-height: 1.6;
     margin-bottom: 30px;
     max-width: 550px;

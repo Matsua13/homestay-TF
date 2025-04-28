@@ -47,21 +47,21 @@ body {
 }
 
 .button--primary {
-    background-color: #5cb85c; /* Example primary color */
+    background-color: #4c9a4c; /* Example primary color */
     color: white;
 }
 
 .button--primary:hover {
-    background-color: #4cae4c;
+    background-color: #3d853d;
 }
 
 .button--secondary {
-    background-color: #f0ad4e; /* Example secondary color */
+    background-color: #e09b3d; /* Example secondary color */
     color: white;
 }
 
 .button--secondary:hover {
-    background-color: #eea236;
+    background-color: #cc8a33;
 }
 
 .button--whatsapp {
@@ -80,7 +80,7 @@ body {
 
 /* You will add more general styles here as needed */
 
-/* Media queries for small screens (max-width: 768px) */
+/* Media queries for small (max-width: 768px) */
 @media (max-width: 768px) {
     body {
         line-height: 1.4;
