@@ -68,3 +68,35 @@
     color: #555;
     margin-bottom: 15px;
 }
+
+/* Media queries for small screens */
+
+@media (max-width: 768px) {
+    .what-to-see {
+        padding: 40px 15px;
+    }
+
+    .what-to-see__intro {
+        margin-bottom: 20px;
+    }
+
+    .what-to-see__gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .what-to-see__caption {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    .what-to-see__cta {
+        margin-top: 20px;
+    }
+
+    .what-to-see__cta p {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+}

@@ -32,12 +32,130 @@
 }
 
 .navbar__nav ul li a:hover {
-    color: #007bff; /* Example hover color */
+    color: #25D366; /* Example hover color */
 }
 
-/* Responsive adjustments for smaller screens (example) */
+/* Additions for mobile version and hamburger effect */
+
+.navbar__toggle {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+    border: none;
+}
+
+.navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    display: block; /* Ensure the bars are block elements */
+}
+
+.navbar__mobile-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Below the navigation bar */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    padding: 20px;
+}
+
+.navbar__mobile-menu.open {
+    display: block; /* Show the menu when it is open */
+}
+
+.navbar__mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar__mobile-menu ul li a {
+    color: #555;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar__mobile-menu ul li a:hover {
+    color: #25D366; /* Keep the hover color */
+    background-color: #f0f0f0; /* Add a slight background on hover in the mobile menu */
+}
+
+/* Hamburger button animation */
+.navbar__toggle.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar__toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Styles for mobile version */
 @media (max-width: 768px) {
-    .navbar__nav {
-        display: none; /* Hide on smaller screens - you might want a hamburger menu here */
+    .navbar {
+        padding: 15px 20px;
     }
+
+    .navbar__logo a {
+        font-size: 1.2em;
+    }
+
+    .navbar__nav {
+        display: none; /* Hide navigation by default on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+
+    .navbar__nav.mobile-open {
+        display: flex; /* Show navigation when the 'mobile-open' class is added */
+    }
+
+    .navbar__nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .navbar__toggle {
+        display: block; /* Show the hamburger button on mobile */
+    }
+}
+
+/* Hamburger button animation */
+.navbar__toggle.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar__toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }

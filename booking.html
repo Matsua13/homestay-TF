@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay - Ubud Serenity Bungalows</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components/booking.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar__logo">
+            <a href="/">Ubud Serenity Bungalows</a>
+        </div>
+        <button class="navbar__toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="navbar__nav">
+            <ul>
+                <li><a href="/#accommodation">Accommodation</a></li>
+                <li><a href="/#about">About Us</a></li>
+                <li><a href="/#around">What to See Around</a></li>
+                <li><a href="/#book-now">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="booking-main">
+        <section class="booking-form">
+            <h1>Book Your Stay</h1>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="checkin">Check-in Date:</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out Date:</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomType">Room Type:</label>
+                    <select id="roomType" name="roomType" required>
+                        <option value="bungalow-room">Bungalow Room - 400k IDR/night</option>
+                        <option value="entire-bungalow">Entire Private Bungalow - 850k IDR/night</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="calculatePrice">Calculate Price</button>
+                </div>
+                <div class="form-group" id="priceRecap" style="display: none;">
+                    <h2>Booking Summary</h2>
+                    <p id="datesRecap"></p>
+                    <p id="priceRecapText"></p>
+                    <button type="submit">Book Now</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2025 Ubud Serenity Bungalows. All rights reserved.</p>
+            <ul class="footer__links">
+                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/terms-of-service">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const calculatePriceButton = document.getElementById('calculatePrice');
+            const bookingForm = document.getElementById('bookingForm');
+            const priceRecap = document.getElementById('priceRecap');
+            const datesRecap = document.getElementById('datesRecap');
+            const priceRecapText = document.getElementById('priceRecapText');
+
+            calculatePriceButton.addEventListener('click', function() {
+                const checkinDate = new Date(document.getElementById('checkin').value);
+                const checkoutDate = new Date(document.getElementById('checkout').value);
+                const roomType = document.getElementById('roomType').value;
+
+                if (checkinDate && checkoutDate && roomType) {
+                    const timeDifference = checkoutDate.getTime() - checkinDate.getTime();
+                    const numberOfNights = timeDifference / (1000 * 3600 * 24);
+
+                    let pricePerNight;
+                    if (roomType === 'bungalow-room') {
+                        pricePerNight = 400000;
+                    } else if (roomType === 'entire-bungalow') {
+                        pricePerNight = 850000;
+                    }
+
+                    const totalPrice = pricePerNight * numberOfNights;
+
+                    datesRecap.textContent = `Dates: ${checkinDate.toDateString()} to ${checkoutDate.toDateString()}`;
+                    priceRecapText.textContent = `Total Price: ${totalPrice.toLocaleString('id-ID')} IDR for ${numberOfNights} nights`;
+                    priceRecap.style.display = 'block';
+                }
+            });
+
+            bookingForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const checkinDate = new Date(document.getElementById('checkin').value);
+        const checkoutDate = new Date(document.getElementById('checkout').value);
+        const roomType = document.getElementById('roomType').value;
+        let roomTypeText = '';
+
+        if (roomType === 'bungalow-room') {
+            roomTypeText = 'Bungalow Room';
+        } else if (roomType === 'entire-bungalow') {
+            roomTypeText = 'Entire Private Bungalow';
+        }
+
+        const message = `Hello, I'd like to book the ${roomTypeText} from ${checkinDate.toDateString()} to ${checkoutDate.toDateString()}. Is the accomodation available?`;
+        const whatsappURL = `https://wa.me/+33689245324?text=${encodeURIComponent(message)}`;
+
+        window.location.href = whatsappURL;
+            });
+        });
+    </script>
+</body>
+</html>

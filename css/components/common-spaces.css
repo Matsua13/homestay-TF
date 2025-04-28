@@ -6,19 +6,20 @@
 .common-spaces {
     padding: 50px 20px;
     background-color: #f9f9f9;
+    text-align: center; /* Center the whole section */
 }
 
 .common-spaces__content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
-    align-items: center;
+    display: flex;
+    flex-direction: column; /* Put the elements by colomns */
+    align-items: center; /* Centrer horizontally the elements */
+    gap: 30px; /* Space between the elements */
 }
 
 .common-spaces__images {
-    flex: 1 1 300px;
+    flex: 0 0 40%;
     display: flex;
     gap: 15px;
 }
@@ -32,9 +33,15 @@
 }
 
 .common-spaces__text {
-    flex: 1 1 400px;
+    text-align: center; /* Center the texte */
+    max-width: 80%;
 }
 
+.common-spaces__description {
+    margin-bottom: 20px;
+}
+
+/* Styles for the "find-us" section */
 .find-us {
     padding: 50px 20px;
     background-color: #eee;
@@ -76,4 +83,34 @@
     line-height: 1.6;
     color: #777;
     margin-bottom: 20px;
+}
+
+/* Media queries for small screens */
+
+@media (max-width: 768px) {
+    .common-spaces {
+        padding: 40px 15px;
+    }
+
+    .common-spaces__content {
+        gap: 20px;
+    }
+
+    .common-spaces__images {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .common-spaces__images img {
+        height: auto;
+    }
+
+    .common-spaces__text {
+        max-width: 100%;
+    }
+
+    .common-spaces__description {
+        margin-bottom: 15px;
+    }
 }

@@ -37,11 +37,11 @@
     margin-bottom: 15px;
 }
 
-/* Styles pour le conteneur du carrousel */
+/* Styles for the carousel container */
 .carousel {
     position: relative;
-    width: 300px; /* Largeur désirée pour le carrousel */
-    margin: 0 auto 20px; /* Centre le carrousel horizontalement et ajoute de l'espace en bas */
+    width: 300px; /* Desired width for the carousel */
+    margin: 0 auto 20px; /* Center the carousel horizontally and add space at the bottom */
     overflow: hidden;
 }
 
@@ -53,12 +53,12 @@
     display: flex;
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
-    gap: 10px; /* Espace entre les images */
+    gap: 10px; /* Space between images */
 }
 
 .carousel-track img {
-    width: 300px; /* Assurez-vous que la largeur de l'image correspond à la largeur du carrousel */
-    height: 450px; /* Conservez la hauteur de vos images */
+    width: 300px;
+    height: 450px;
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -73,7 +73,7 @@
     cursor: pointer;
     transform: translateY(-50%);
     z-index: 1;
-    font-size: 1.5em; /* Pour correspondre à vos flèches précédentes */
+    font-size: 1.5em;
 }
 
 .carousel-button.prev { left: 10px; }
@@ -110,6 +110,48 @@
 }
 
 .spacer {
-    height: 30px; /* Ajustez la hauteur pour contrôler l'espace */
-    width: 100%; /* Pour s'assurer qu'il prend toute la largeur disponible */
+    height: 30px; /* Adjust the height to control the space */
+    width: 100%; /* Ensure it takes the full available width */
+}
+
+/* Media queries for small screens */
+
+@media (max-width: 768px) {
+    .accommodation-options {
+        padding: 40px 15px;
+    }
+
+    .accommodation-options__intro {
+        margin-bottom: 20px;
+    }
+
+    .accommodation-options__container {
+        gap: 40px;
+    }
+
+    .accommodation-options__type {
+        max-width: 100%;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .carousel-track img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel-button {
+        font-size: 1.2em;
+    }
+
+    .accommodation-options__description {
+        margin-bottom: 20px;
+    }
+
+    .accommodation-options__actions {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

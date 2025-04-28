@@ -17,3 +17,20 @@
 .book-button-container a.button--large {
     display: inline-block;
 }
+
+/* Media queries for small screens */
+
+@media (max-width: 768px) {
+    .book-button-section {
+        padding: 40px 15px;
+    }
+
+    .book-button-container {
+        max-width: 100%;
+    }
+
+    .book-button-container a.button--large {
+        display: block;
+        margin: 10px auto;
+    }
+}

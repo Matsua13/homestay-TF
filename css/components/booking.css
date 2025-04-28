@@ -1,0 +1,74 @@
+/* File: css/components/booking.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.booking-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/homepage2.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    min-height: calc(100vh - 120px);
+}
+
+.booking-form {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.booking-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #21a759;
+}
+
+#priceRecap {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#priceRecap h2 {
+    margin-top: 0;
+}

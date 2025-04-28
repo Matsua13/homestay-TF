@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const slides = Array.from(track.children);
         const nextButton = carousel.querySelector('.carousel-button.next');
         const prevButton = carousel.querySelector('.carousel-button.prev');
-        const gap = 10; // Doit correspondre à la valeur de gap dans votre CSS
+        const gap = 10; // Must correspond to the gap value in your CSS
 
         if (!slides.length || !nextButton || !prevButton) {
-            return; // Empêche les erreurs si des éléments sont manquants
+            return; // Prevents errors if elements are missing
         }
 
         let currentIndex = 0;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSlidePosition();
         });
 
-        // Initialisation de la position
+        // Position Initialization
         updateSlidePosition();
     });
 });

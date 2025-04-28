@@ -79,3 +79,29 @@ body {
 }
 
 /* You will add more general styles here as needed */
+
+/* Media queries for small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        line-height: 1.4;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .button--large {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+}

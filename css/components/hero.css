@@ -23,7 +23,7 @@
 .hero__image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ou une autre valeur comme 'scale-down' */
+    object-fit: cover; /* To fit the container */
 }
 
 .hero__image {
@@ -54,4 +54,27 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+/* Media queries for small screens */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 15px;
+    }
+
+    .hero__title {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+
+    .hero__subtitle {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
